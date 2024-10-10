@@ -1,0 +1,346 @@
+//home.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    width: 100%;
+    background-color: white;
+
+}
+header .nav-container{
+    display: flex;
+    justify-content: space-around;
+    height: 12vh;
+    align-items: center;
+}
+.nav-container .logo{
+    font-size: 40px;
+    color: #053c74;
+    font-weight: 700;
+}
+nav ul{
+    display: flex;
+}
+nav ul a{
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    margin-left: 30px;
+    font-size: 22px;
+    font-weight: 550;
+    padding: 7px 15px;
+    border-radius: 7px;
+    transition:all 0.3s ease ;
+}
+nav ul a:hover{
+    cursor: pointer;
+    background-color: #fbbf24 ;
+    
+}
+.search-container{
+    background-color: #053c74;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-container .content{
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 30px 0px 10px 0px;
+}
+.search-container p{
+    color: white;
+    font-size: 20px;
+    padding: 5px 0px 10px 0px;
+}
+.search-container .inputs{
+    width: 35vw;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+.inputs input{
+    flex: 1;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background: none;
+    font-size: 15px;
+}
+.inputs button{
+    border-radius: 20px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    background-color: #fbbf24;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.top3-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top3-container h2{
+    padding: 70px 0px 30px 0px;
+    font-size: 35px;
+}
+.top3-container .top3-card{
+    display: flex;
+}
+.top3-card .top{
+    height: 50vh;
+    width: 25vw;
+    background-color: white;
+    border: 1px solid gray;
+    margin: 2.5vw;
+    border-radius: 10px;
+}
+
+/* FEATURED PROPERTY  */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.featured-properties {
+    padding: 4rem 0;
+    background-color: #f3f4f6;
+}
+.featured-properties h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.property-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.property-card img {
+    width: 100%;
+    height: 200px;
+    padding-top: 20px;
+    object-fit: cover;
+}
+.property-info {
+    padding: 1.5rem;
+}
+.property-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.property-info p {
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+.property-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Call to action styles */
+.cta {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #fbbf24;
+    color: #1f2937;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #f59e0b;
+}
+
+/* Footer styles */
+footer {
+    background-color: #1f2937;
+    color: #ffffff;
+    padding: 4rem 0;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.footer-section p, .footer-section ul {
+    color: #9ca3af;
+}
+.footer-section ul {
+    list-style: none;
+}
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-section ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .search-bar {
+        flex-direction: column;
+    }
+    .search-bar input, .search-bar button {
+        width: 100%;
+        border-radius: 4px;
+    }
+    .search-bar button {
+        margin-top: 0.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">DreamHome</div>
+            <nav>
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="Selling.html">Sell</a>
+                    <a href="Rent.html">Rent</a>
+                    <a href="#">Help</a>
+                    <a href="signup.html">Sign Up</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="search-container">
+            <div class="content">Find Your Dream Home</div>
+            <p>Discover the perfect property for you</p>
+            <div class="inputs">
+                <input type="text" placeholder="Enter location, property type or keyword...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+    <section class="featured-properties">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <div class="property-grid">
+                <div class="property-card">
+                    <img src="home.png" alt="Beautiful Family Home">
+                    <div class="property-info">
+                        <h3>Beautiful Family Home</h3>
+                        <p>238/A, Main Street, Andheri East</p>
+                        <p>4BHK • 2,500 sqft</p>
+                        <p class="price">₹2.5 crores</p>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <img src="https://assets.architecturaldigest.in/photos/60084b3673920cfd396b3b84/16:9/w_2560%2Cc_limit/Mumbai-Lodha-World-One-towers-apartment-9-1366x768.jpg" alt="Modern City Apartment">
+                    <div class="property-info">
+                        <h3>Modern City Apartment</h3>
+                        <p>A, Hill Road, Bandra West</p>
+                        <p>2BHK 1,200 sqft</p>
+                        <p class="price">₹2.25 crores</p>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1070238663837718390/original/10d8c3aa-8bea-46a1-a687-f1be2ded3cf7.jpeg?im_w=720" alt="Cozy Suburban Cottage">
+                    <div class="property-info">
+                        <h3>Cozy Suburban Cottage</h3>
+                        <p>90-B,Borivali</p>
+                        <p>2BHK 1,800 sqft</p>
+                        <p class="price">₹1.2 crore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Find Your Perfect Home?</h2>
+            <p>Let us guide you through the process</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>DreamHome is your trusted partner in finding the perfect property for your needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Properties</a></li>
+                        <li><a href="#">Agents</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>123 Real Estate St<br>Cityville, State 12345<br>Phone: (123) 456-7890<br>Email: info@dreamhome.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p>Social media icons would go here</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DreamHome. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

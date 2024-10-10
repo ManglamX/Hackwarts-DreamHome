@@ -1,0 +1,268 @@
+//signup.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - DreamHome Real Estate</title>
+    <style>
+        /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+    background: url(https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parent-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+}
+.sign-up{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+.bg-img{
+    width: 50vw;
+    height: 100%;
+    position: relative;
+}
+.bg-img .content{
+    position: absolute;
+    top: 0;
+    color: white;
+}
+.content{
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content div {
+    font-size: 70px;
+    margin-bottom: 40px;
+    
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.content .comfort{
+    font-size: 60px;
+    padding: 0;
+    margin-bottom: 285px;
+    margin-left: 220px;
+    font-weight: 900 ;
+    color: #053c74;
+    text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 15px #fff;
+    /* text-shadow: none; */
+}
+.txt-vertical{
+    font-size: 24px;
+            transform: rotate(90deg); /* Or rotate(270deg) */
+            transform-origin: left top; /* Adjust rotation axis */
+            white-space: nowrap; /* Ensure the text doesn't wrap */
+            display: inline-block;
+            margin: 0px 600px;
+            position: relative;
+            top: -200px;
+}
+/* .content :nth-child(1){
+    font-size: 80px;
+}
+.content :nth-child(2){
+    font-size: 180px;
+    font-weight: 700;
+}
+.content :nth-child(3){
+    font-size: 80px;
+} */
+
+.bg-img img{
+    width: 898px;
+    height: 100vh;
+    object-fit: fill;
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+ header{
+    height: 10vh;
+ }
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+.form-container {
+    background-color: rgba(5, 60, 116,0.5);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 2px solid black;
+    backdrop-filter: blur(5px);
+}
+h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+.note{
+    color: #6b7280;
+    font-size: 15px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+.form-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: white;
+}
+.form-footer a {
+    color: #2563eb;
+    text-decoration: none;
+}
+.form-footer a:hover {
+    text-decoration: underline;
+}
+.form-step {
+    display: none;
+}
+.form-step.active {
+    display: block;
+}
+    </style>
+</head>
+
+
+<body>
+
+<div class="parent-container">
+    <div class="sign-up">
+        <div class="container">
+            <main>
+                <div class="form-container">
+                    <h1>Create Your Account</h1>
+                    <form id="signup-form" action="#" method="POST">
+                        <div id="step1" class="form-step active">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <input type="text" id="firstname" name="firstname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" id="lastname" name="lastname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">Contact Number</label>
+                                <input type="tel" id="contact" name="contact" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="note">Note- A Verification code will be sent on your entered Email and contact
+                                number.</div>
+                            <button type="button" class="submit-btn" onclick="nextStep()">Next</button>
+                        </div>
+                        <div id="step2" class="form-step">
+                            <div class="form-group">
+                                <label for="username">Enter OTP sent on entered Phone Number</label>
+                                <input type="text" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Enter Verification Code send on registered Email Id</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="submit-btn">Sign Up</button>
+                        </div>
+                    </form>
+                    <div class="form-footer">
+                        <p>Already have an account? <a href="signin.html">Sign in</a></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="bg-img">
+        <!-- <img src="https://i.pinimg.com/564x/83/7f/2b/837f2bc832557631c35b98c705ee83d7.jpg"> -->
+        <div class="content">
+            <div>Find</div>
+            <div class="comfort">Comfort</div>
+            <div class="txt-vertical">Find Home</div>
+        </div>
+    </div>
+
+</div>
+
+    <script>
+        function nextStep() {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('step2').classList.add('active');
+            
+        }
+    </script>
+</body>
+
+</html>

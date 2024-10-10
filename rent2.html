@@ -1,0 +1,294 @@
+//Rent2.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHome - Property Details</title>
+    <style>
+         *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    width: 100%;
+    background-color: white;
+
+}
+header .nav-container{
+    display: flex;
+    justify-content: space-around;
+    height: 12vh;
+    align-items: center;
+    border-bottom: 2px solid #0056b3;
+}
+.nav-container .logo{
+    font-size: 40px;
+    color: #053c74;
+    font-weight: 700;
+}
+nav ul{
+    display: flex;
+}
+nav ul a{
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    margin-left: 30px;
+    font-size: 22px;
+    font-weight: 550;
+    padding: 7px 15px;
+    border-radius: 7px;
+    transition:all 0.3s ease ;
+}
+nav ul a:hover{
+    cursor: pointer;
+    background-color: #fbbf24 ;
+}
+
+        main {
+            padding: 2rem 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .property-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .photo-gallery {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .gallery-nav button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .gallery-nav button.active {
+            background-color: #fff;
+        }
+
+        .property-info h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .property-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .amenity {
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .owner-details, .related-properties {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-owner {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .map {
+            height: 300px;
+            background-color: #e9e9e9;
+            margin-top: 2rem;
+        }
+
+        .related-property {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .related-property:last-child {
+            border-bottom: none;
+        }
+
+        .related-property img {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            margin-right: 1rem;
+            border-radius: 4px;
+        }
+
+        .related-property-info h3 {
+            margin-bottom: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .property-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">DreamHome</div>
+            <nav>
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="Selling.html">Sell</a>
+                    <a href="Rent.html">Rent</a>
+                    <a href="#">Help</a>
+                    <a href="signup.html">Sign Up</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="property-details">
+            <div class="left-column">
+                <div class="photo-gallery">
+                    <img src="https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto,w_600/e_improve/e_sharpen:10/e_saturation:10/f_auto,q_auto/v1659953864/Website/CMS-Uploads/wd9pjvxejkr1kgumjing.jpg" alt="Property Image 1" id="mainImage">
+                    <div class="gallery-nav" id="galleryNav"></div>
+                </div>
+                <div class="property-info">
+                    <h1>Cozy 2BHK Apartment</h1>
+                    <p><strong>Address:</strong> 123 Dream Street, Cityville</p>
+                    <p><strong>Location:</strong> Downtown</p>
+                    <p><strong>Rent:</strong> RS 5000 per month</p>
+                    <p><strong>Size:</strong> 1000 sq ft</p>
+                    <p><strong>Bedrooms:</strong> 2</p>
+                    <p><strong>Bathrooms:</strong> 1</p>
+                    <div class="amenities">
+                        <span class="amenity">Parking Available</span>
+                        <span class="amenity">Kitchen</span>
+                        <span class="amenity">Washing Machine</span>
+                        <span class="amenity">Air Conditioning</span>
+                    </div>
+                    <h2>Description</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+                </div>
+                <div class="map" id="propertyMap">
+                    <!-- Map will be inserted here -->
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="owner-details">
+                    <h2>Owner Details</h2>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+                    <p><strong>Email:</strong> john.doe@example.com</p>
+                    <a href="#" class="contact-owner">Contact Owner</a>
+                </div>
+                <div class="related-properties">
+                    <h2>Related Properties</h2>
+                    <div class="related-property">
+                        <img src="https://content.jdmagicbox.com/v2/comp/mumbai/a1/022pxx22.xx22.200720162058.d9a1/catalogue/p-j-housing-santacruz-east-mumbai-ac-paying-guest-accommodations-h6p5x6053f.jpg" alt="Related Property 1">
+                        <div class="related-property-info">
+                            <h3>Modern Studio Apartment</h3>
+                            <p>RS 4000/month</p>
+                        </div>
+                    </div>
+                    <div class="related-property">
+                        <img src="https://kripalhomes.com/wp-content/uploads/2023/07/boys-pg-in-ahmedabad-Copy.jpg" alt="Related Property 2">
+                        <div class="related-property-info">
+                            <h3>Spacious 3BHK Flat</h3>
+                            <p>RS 7000/month</p>
+                        </div>
+                    </div>
+                    <div class="related-property">
+                        <img src="https://alexandro.in/image/hyderabad/settl-bron/1.jpg" alt="Related Property 3">
+                        <div class="related-property-info">
+                            <h3>Cozy 1BHK with Balcony</h3>
+                            <p>RS 4500/month</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Image gallery functionality
+        const images = [
+            "/placeholder.svg?height=400&width=600",
+            "/placeholder.svg?height=400&width=600&text=Image+2",
+            "/placeholder.svg?height=400&width=600&text=Image+3",
+            "/placeholder.svg?height=400&width=600&text=Image+4"
+        ];
+        const mainImage = document.getElementById('mainImage');
+        const galleryNav = document.getElementById('galleryNav');
+
+        images.forEach((src, index) => {
+            const button = document.createElement('button');
+            button.addEventListener('click', () => {
+                mainImage.src = src;
+                document.querySelectorAll('.gallery-nav button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+            if (index === 0) button.classList.add('active');
+            galleryNav.appendChild(button);
+        });
+
+        // Simple map placeholder
+        const map = document.getElementById('propertyMap');
+        map.innerHTML = '<div style="padding: 1rem; text-align: center;">Map placeholder - Integration with a real map service would go here</div>';
+
+        // Contact owner functionality
+        document.querySelector('.contact-owner').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Contact form or owner contact details would appear here.');
+        });
+    </script>
+</body>
+</html>
